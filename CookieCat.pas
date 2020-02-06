@@ -12413,7 +12413,10 @@ program CookieCat;
 
         for core := coremin to coremax do
           if sscptrvec[core] <> nil then
+          begin
             SscTerm(sscptrvec[core]^);
+            Dispose(sscptrvec[core]);
+          end;
 
       end
   end; { CpcTerm }
